@@ -28,7 +28,7 @@ console.log(dog.bark());
 
 //_____________________________________________________
 
-let dog = {
+let dogA = {
   name: 'Spike',
   prefixes: [`I am`, `My name`, `People call me`],
   bark: function() {
@@ -38,14 +38,14 @@ let dog = {
   }
 }
 
-dog.bark();
+dogA.bark();
 
 //_____________________________________________________
 
 //This bound to outer Scope.
 //No arguments array is available.
 
-let dog = {
+let dogB = {
   name: 'Spike',
   prefixes: [`I am`, `My name`, `People call me`],
   bark: function() {
@@ -54,4 +54,4 @@ let dog = {
   }
 }
 
-dog.bark();
+dogB.bark();

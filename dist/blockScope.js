@@ -1,11 +1,11 @@
 'use strict';
 //Block Scope variable declarations let, const.
 
-var blockScope = function () {
+var blockScope = function blockScope() {
   {
-    let myName = `Jean`;
+    var myName = 'Jean';
     {
-      const myLastName = `Troiani`;
+      var myLastName = 'Troiani';
       // myLastName = `Rojas`;
       //Error because const cannot be re-assigned.
     }
@@ -17,12 +17,17 @@ var blockScope = function () {
 //______________
 // Let in for loops adds a new let definition on every run
 boxOfFunctions = [];
-for (let i = 0; i < 3; i++) {
-  boxOfFunctions.push(
-    function() {
-      return console.log(i)
-    }
-  );
+
+var _loop = function (i) {
+  boxOfFunctions.push(function () {
+    return console.log(i);
+  });
+};
+
+for (var i = 0; i < 3; i++) {
+  _loop(i);
 }
 
-boxOfFunctions.map((x) => x());
+boxOfFunctions.map(function (x) {
+  return x();
+});
