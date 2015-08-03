@@ -56,5 +56,32 @@ function foo () {
 
 foo(1,2,3); // [1, 2, 3]
 
+//from
 Array.from("Hello"); //['H', 'e', 'l', 'l', 'o']
 
+//Of
+Array.of(1, 2, 3); //[1, 2, 3]
+
+//copyWithin
+[1, 2, 3, 4, 5, 6].copyWithin(2, 3, 4) //  [1, 2, 4, 5, 5, 6]
+
+//Entries
+//returns a new Array Iterator 
+array = ['A', 'B'];
+console.log(array.entries().next()); // { value: [0, 'A']};
+
+//Fill
+
+[1, 2, 3].fill(4); //[4,4,4]
+[1, 2, 3, 4, 5].fill('A', 2, 1); // [1, 2,'A', 4, 5]
+
+//Find
+
+var isBiggerThanTwo = function(elem, index, array) {
+	if (elem > 3) {
+		return true;
+	} else {
+		return false;
+	}
+};
+[1,2,3,4].find(isBiggerThanTwo); //4
